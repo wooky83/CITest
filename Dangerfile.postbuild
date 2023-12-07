@@ -7,7 +7,11 @@ github.dismiss_out_of_range_messages({
   markdown: true
 })
 
-Dir.glob('build/*.xcresult') do |result|
+# Report xcodebuild errors
+xcode_summary.inline_mode = true
+
+Dir.glob('build/result.xcresult') do |result|
+  message("Parsing xcodebuild result")
   xcode_summary.report result
 end
 
