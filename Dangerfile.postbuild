@@ -1,0 +1,35 @@
+# vim: syntax=ruby
+
+github.dismiss_out_of_range_messages({
+  error: false,
+  warning: true,
+  message: true,
+  markdown: true
+})
+
+Dir.glob('build/*.xcresult') do |result|
+  xcode_summary.report result
+end
+
+# Report failed tests
+Dir.glob('build/report.junit') do |result|
+  junit.parse result
+  junit.report
+
+  # Find tests that exceed the time limit
+  all_tests = junit.tests.map(&:attributes)
+  time_limit = 2.0
+  # Group tests by class name
+  grouped_tests = all_tests.group_by { |test| test[:classname] }
+  grouped_tests.each do |classname, tests|
+    long_tests = tests.select { |test| test[:time].to_f > time_limit }
+    # If any tests exceed the time limit, issue a warning for the class
+    unless long_tests.empty?
+      warning = "⏰ Testcase: `#{classname}` exceeded time limit of #{time_limit.to_i} seconds.\n"
+      long_tests.each do |test|
+        warning += "  - `#{test[:name]}` - (#{test[:time]} seconds)\n"
+      end
+      warn(warning)
+    end
+  end
+end
