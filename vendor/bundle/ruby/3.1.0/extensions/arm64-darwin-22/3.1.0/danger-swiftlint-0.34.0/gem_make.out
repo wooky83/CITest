@@ -1,0 +1,4 @@
+current directory: /Users/user/Desktop/GitHub/CITest/vendor/bundle/ruby/3.1.0/gems/danger-swiftlint-0.34.0/ext/swiftlint
+/Users/user/.rbenv/versions/3.1.2/bin/ruby -I/Users/user/.rbenv/versions/3.1.2/lib/ruby/3.1.0 -rrubygems /Users/user/Desktop/GitHub/CITest/vendor/bundle/ruby/3.1.0/gems/rake-13.1.0/exe/rake RUBYARCHDIR\=/Users/user/Desktop/GitHub/CITest/vendor/bundle/ruby/3.1.0/extensions/arm64-darwin-22/3.1.0/danger-swiftlint-0.34.0 RUBYLIBDIR\=/Users/user/Desktop/GitHub/CITest/vendor/bundle/ruby/3.1.0/extensions/arm64-darwin-22/3.1.0/danger-swiftlint-0.34.0
+/Users/user/Desktop/GitHub/CITest/vendor/bundle/ruby/3.1.0/gems/danger-swiftlint-0.34.0/ext/swiftlint/downloadSwiftlint.sh -u https://github.com/realm/SwiftLint/releases/download/0.54.0/portable_swiftlint.zip -d /Users/user/Desktop/GitHub/CITest/vendor/bundle/ruby/3.1.0/gems/danger-swiftlint-0.34.0/ext/swiftlint/bin -a portable_swiftlint.zip -dh b3ced098efb95de601fba7c299fbb123
+Downloading swiftlint@0.54.0
