@@ -32,7 +32,7 @@ jobs:
           xcode-version: '15.0.1'
 
       - name: Build & Tests SPM project
-        run: xcodebuild -scheme CITest -destination 'platform=iOS Simulator,name=iPhone 14 Pro' -resultBundlePath 'result.xcresult' build test | xcpretty --report junit --output 'report.junit'
+        run: xcodebuild -scheme CITest -destination 'platform=iOS Simulator,name=iPhone 14 Pro' -resultBundlePath 'build/result.xcresult' build test | xcpretty --report junit --output 'build/report.junit'
       
       - uses: kishikawakatsumi/xcresulttool@v1
         with:
