@@ -1,0 +1,35 @@
+{
+  "configurations" : [
+    {
+      "id" : "3543B148-0FE0-4C1D-928A-8C383C3368C1",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:CITest.xcodeproj",
+      "identifier" : "CE010F7C2B216569001A324E",
+      "name" : "CITest"
+    }
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:CITest.xcodeproj",
+        "identifier" : "CE010F8C2B21656A001A324E",
+        "name" : "CITestTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:CITest.xcodeproj",
+        "identifier" : "CE010F962B21656A001A324E",
+        "name" : "CITestUITests"
+      }
+    }
+  ],
+  "version" : 1
+}
