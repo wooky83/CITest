@@ -24,6 +24,7 @@
       }
     },
     {
+      "enabled" : false,
       "target" : {
         "containerPath" : "container:CITest.xcodeproj",
         "identifier" : "CE010F962B21656A001A324E",

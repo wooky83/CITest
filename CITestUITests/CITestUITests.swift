@@ -1,10 +1,3 @@
-//
-//  CITestUITests.swift
-//  CITestUITests
-//
-//  Created by SungwookKwon on 2023/12/07.
-//
-
 import XCTest
 
 final class CITestUITests: XCTestCase {

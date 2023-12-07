@@ -1,10 +1,3 @@
-//
-//  ContentView.swift
-//  CITest
-//
-//  Created by SungwookKwon on 2023/12/07.
-//
-
 import SwiftUI
 
 struct ContentView: View {
