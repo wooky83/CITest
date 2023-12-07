@@ -28,7 +28,6 @@ Result/
 
 
 # Remove Xcode project
-*\.xcodeproj
 *.xcworkspace
 
 *.xcuserstate
