@@ -16,6 +16,7 @@
 		CE010F9E2B21656A001A324E /* CITestUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE010F9D2B21656A001A324E /* CITestUITestsLaunchTests.swift */; };
 		CE0F77FF2B218D1A00DB3F2F /* CITest.xctestplan in Resources */ = {isa = PBXBuildFile; fileRef = CE0F77FE2B218D1A00DB3F2F /* CITest.xctestplan */; };
 		CE0F78012B21B12E00DB3F2F /* CIUtilTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0F78002B21B12E00DB3F2F /* CIUtilTests.swift */; };
+		CEF5B4932B22F53D002767F1 /* CITestUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF5B4922B22F53D002767F1 /* CITestUtil.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		CE010F9D2B21656A001A324E /* CITestUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CITestUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		CE0F77FE2B218D1A00DB3F2F /* CITest.xctestplan */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CITest.xctestplan; sourceTree = "<group>"; };
 		CE0F78002B21B12E00DB3F2F /* CIUtilTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIUtilTests.swift; sourceTree = "<group>"; };
+		CEF5B4922B22F53D002767F1 /* CITestUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CITestUtil.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,8 +101,8 @@
 		CE010F7F2B216569001A324E /* CITest */ = {
 			isa = PBXGroup;
 			children = (
-				CE010F802B216569001A324E /* CITestApp.swift */,
-				CE010F822B216569001A324E /* ContentView.swift */,
+				CEF5B4912B22F521002767F1 /* Util */,
+				CEF5B4902B22F50D002767F1 /* View */,
 				CE010F842B21656A001A324E /* Assets.xcassets */,
 				CE010F862B21656A001A324E /* Preview Content */,
 			);
@@ -131,6 +133,23 @@
 				CE010F9D2B21656A001A324E /* CITestUITestsLaunchTests.swift */,
 			);
 			path = CITestUITests;
+			sourceTree = "<group>";
+		};
+		CEF5B4902B22F50D002767F1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CE010F802B216569001A324E /* CITestApp.swift */,
+				CE010F822B216569001A324E /* ContentView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CEF5B4912B22F521002767F1 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				CEF5B4922B22F53D002767F1 /* CITestUtil.swift */,
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,6 +283,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEF5B4932B22F53D002767F1 /* CITestUtil.swift in Sources */,
 				CE010F832B216569001A324E /* ContentView.swift in Sources */,
 				CE010F812B216569001A324E /* CITestApp.swift in Sources */,
 			);
