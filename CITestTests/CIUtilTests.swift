@@ -7,4 +7,8 @@ final class CIUtilTests: XCTestCase {
         XCTAssertEqual("1", "1")
     }
 
+    func testUtilInt() throws {
+        XCTAssertEqual(1, 1)
+    }
+
 }
