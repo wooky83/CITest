@@ -32,7 +32,7 @@ jobs:
           xcode-version: '15.0.1'
       
       - name: Danger PreBuild
-        run: bundle exec danger --danger_id=prebuild
+        run: bundle exec danger --danger_id=prebuild --remove-previous-comments
         env:
           DANGER_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
