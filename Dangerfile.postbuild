@@ -11,7 +11,6 @@ github.dismiss_out_of_range_messages({
 xcode_summary.inline_mode = true
 
 Dir.glob('build/result.xcresult') do |result|
-  message("Parsing xcodebuild result")
   xcode_summary.report result
 end
 
