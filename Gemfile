@@ -4,3 +4,5 @@ gem 'danger'
 gem 'danger-junit'
 gem 'danger-swiftlint'
 gem 'danger-xcode_summary'
+
+gem "fastlane"

@@ -37,7 +37,7 @@ jobs:
           DANGER_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Xcode Build & Tests 
-        run: xcodebuild -scheme CITest -destination 'platform=iOS Simulator,name=iPhone 14 Pro' -resultBundlePath 'build/result.xcresult' build test | xcpretty --report junit --output 'build/report.junit'
+        run: fastlane test
       
       - uses: kishikawakatsumi/xcresulttool@v1
         with:
