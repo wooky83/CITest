@@ -37,7 +37,7 @@ jobs:
           DANGER_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Xcode Build & Tests 
-        run: fastlane test
+        run: bundle exec fastlane test
       
       - uses: kishikawakatsumi/xcresulttool@v1
         with:
