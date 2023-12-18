@@ -4,7 +4,7 @@ import SwiftUI
 struct CITestApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainView()
         }
     }
 }
