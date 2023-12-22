@@ -31,7 +31,7 @@ def find_git_blame_for_method(pattern, method_name)
     method_lines.each do |line|
       author = line.match(/\((.*?)\s\d{4}-\d{2}-\d{2}/)[1]
       author = author.split(' ')[0..-1].join(' ')
-      return "@#{author}"
+      return "#{author}"
     end
   end
   return "unknown"
