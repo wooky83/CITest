@@ -10,29 +10,62 @@ github.dismiss_out_of_range_messages({
 # Report xcodebuild errors
 xcode_summary.inline_mode = true
 
-Dir.glob('build/result.xcresult') do |result|
-  xcode_summary.report result
+Dir.glob('**/result.xcresult') do |result|
+  begin
+    xcode_summary.report result
+  rescue => e
+    puts "xcresult error occurred: #{e.message}"
+  end
 end
 
-# Report failed tests
-Dir.glob('build/report.junit') do |result|
-  junit.parse result
-  junit.report
+def find_git_blame_for_method(pattern, method_name)
+  pattern = pattern.split('.').last
+  files = Dir.glob("**/#{pattern}.swift")
 
-  # Find tests that exceed the time limit
-  all_tests = junit.tests.map(&:attributes)
-  time_limit = 2.0
-  # Group tests by class name
+  files.each do |file|
+    blame_output = `git blame #{file}`
+  
+    blame_lines = blame_output.lines
+    method_lines = blame_lines.grep(/#{method_name}/)
+    
+    method_lines.each do |line|
+      author = line.match(/\((.*?)\s\d{4}-\d{2}-\d{2}/)[1]
+      author = author.split(' ')[0..-1].join(' ')
+      return "@#{author}"
+    end
+  end
+  return "unknown"
+end
+
+def generate_slow_tests_report(all_tests, time_limit)
+  table_content = ""
+
   grouped_tests = all_tests.group_by { |test| test[:classname] }
   grouped_tests.each do |classname, tests|
-    long_tests = tests.select { |test| test[:time].to_f > time_limit }
-    # If any tests exceed the time limit, issue a warning for the class
+    long_tests = tests.select { |test| test[:time].to_f > time_limit }.uniq { |test| test[:name] }
     unless long_tests.empty?
-      warning = "⏰ Testcase: `#{classname}` exceeded time limit of #{time_limit.to_i} seconds.\n"
       long_tests.each do |test|
-        warning += "  - `#{test[:name]}` - (#{test[:time]} seconds)\n"
+        author = find_git_blame_for_method("#{classname}", test[:name])  
+        table_content += "|⏰<code>#{classname}</code><br>✖️<code>#{test[:name]}</code> (#{test[:time].to_f.round(2)} seconds) | #{author} |\n"
       end
-      warn(warning)
     end
+  end
+  
+  unless table_content.empty?
+    table = "| Test Suite | Author |\n| --- | --- |\n"
+    table += table_content
+    markdown("## ⚠️ Tests exceeded #{time_limit} seconds require modification\n" + table)
+  end
+end
+
+# Report failed tests from xcodebuild
+Dir.glob('**/report.junit') do |result|
+  begin
+    junit.parse result
+    junit.report
+    # Report test exceeding time limit
+    generate_slow_tests_report(junit.tests.map(&:attributes), 2.0)
+  rescue => e
+    puts "junit error occurred: #{e.message}"
   end
 end
