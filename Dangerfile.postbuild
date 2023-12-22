@@ -46,7 +46,7 @@ def generate_slow_tests_report(all_tests, time_limit)
     unless long_tests.empty?
       long_tests.each do |test|
         author = find_git_blame_for_method("#{classname}", test[:name])  
-        table_content += "|⏰<code>#{classname}</code><br>✖️<code>#{test[:name].round(2)}</code> (#{test[:time]} seconds) | #{author} |\n"
+        table_content += "|⏰<code>#{classname}</code><br>✖️<code>#{test[:name]}</code> (#{test[:time].round(2)} seconds) | #{author} |\n"
       end
     end
   end
