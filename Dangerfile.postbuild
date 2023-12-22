@@ -10,7 +10,7 @@ github.dismiss_out_of_range_messages({
 # Report xcodebuild errors
 xcode_summary.inline_mode = true
 
-Dir.glob("**/*.xcresult") do |result|
+Dir.glob('**/result.xcresult') do |result|
   begin
     xcode_summary.report result
   rescue => e
@@ -59,7 +59,7 @@ def generate_slow_tests_report(all_tests, time_limit)
 end
 
 # Report failed tests from xcodebuild
-Dir.glob("**/report.junit") do |result|
+Dir.glob('**/report.junit') do |result|
   begin
     junit.parse result
     junit.report
