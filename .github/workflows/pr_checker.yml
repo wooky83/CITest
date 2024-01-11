@@ -15,6 +15,18 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
+
+      - name: Check modified shell scripts
+        run: |
+          git fetch origin ${{ github.base_ref }}
+          FILES=$(git diff --name-only origin/${{ github.base_ref }})
+          echo "Modified files: $FILES"
+          for FILE in $FILES; do
+            if [[ "$FILE" == *.sh ]]; then
+              echo "Shell script modified: $FILE"
+              # 여기에 .sh 파일이 수정되었을 때 수행할 동작을 추가하세요.
+            fi
+          done
         
       - name: Cache RubyGems
         uses: actions/cache@v3
