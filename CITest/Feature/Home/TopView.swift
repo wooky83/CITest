@@ -12,12 +12,19 @@ struct HomeTopView: View {
                 }, label: {
                     Text(ViewType.stackFrame.rawValue)
                 })
+                Button(action: {
+                    path.append(.obsStateEnvironment)
+                }, label: {
+                    Text(ViewType.obsStateEnvironment.rawValue)
+                })
             }
             .navigationTitle("SwiftUI")
             .navigationDestination(for: ViewType.self) { next in
                 switch next {
                 case .stackFrame:
                     StackFrameView()
+                case .obsStateEnvironment:
+                    ObsStateEnvironmentView()
                 }
             }
         }
@@ -26,6 +33,7 @@ struct HomeTopView: View {
 
 enum ViewType: String, Hashable {
     case stackFrame
+    case obsStateEnvironment
 }
 
 #Preview {

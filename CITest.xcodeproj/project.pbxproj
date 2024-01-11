@@ -20,6 +20,10 @@
 		CE7456F02B2BE4EA005E2FB9 /* TopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7456EF2B2BE4EA005E2FB9 /* TopView.swift */; };
 		CEA02D712B4E950D005206F1 /* StackFrameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA02D702B4E950D005206F1 /* StackFrameView.swift */; };
 		CEA02D732B4E9F0C005206F1 /* HStackVStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA02D722B4E9F0C005206F1 /* HStackVStackView.swift */; };
+		CEAE4A382B4FDD9F004DDC70 /* ObsStateEnvironmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAE4A372B4FDD9F004DDC70 /* ObsStateEnvironmentView.swift */; };
+		CEAE4A3C2B4FE1F6004DDC70 /* DemoDataVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAE4A3B2B4FE1F6004DDC70 /* DemoDataVM.swift */; };
+		CEAE4A3E2B4FE27B004DDC70 /* DemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAE4A3D2B4FE27B004DDC70 /* DemoView.swift */; };
+		CEAE4A402B4FE3B8004DDC70 /* SpeedControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAE4A3F2B4FE3B8004DDC70 /* SpeedControlView.swift */; };
 		CEF5B4932B22F53D002767F1 /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF5B4922B22F53D002767F1 /* Array+Extension.swift */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +61,10 @@
 		CE7456EF2B2BE4EA005E2FB9 /* TopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopView.swift; sourceTree = "<group>"; };
 		CEA02D702B4E950D005206F1 /* StackFrameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackFrameView.swift; sourceTree = "<group>"; };
 		CEA02D722B4E9F0C005206F1 /* HStackVStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HStackVStackView.swift; sourceTree = "<group>"; };
+		CEAE4A372B4FDD9F004DDC70 /* ObsStateEnvironmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObsStateEnvironmentView.swift; sourceTree = "<group>"; };
+		CEAE4A3B2B4FE1F6004DDC70 /* DemoDataVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoDataVM.swift; sourceTree = "<group>"; };
+		CEAE4A3D2B4FE27B004DDC70 /* DemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoView.swift; sourceTree = "<group>"; };
+		CEAE4A3F2B4FE3B8004DDC70 /* SpeedControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedControlView.swift; sourceTree = "<group>"; };
 		CEF5B4922B22F53D002767F1 /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -149,8 +157,8 @@
 			isa = PBXGroup;
 			children = (
 				CE7456EF2B2BE4EA005E2FB9 /* TopView.swift */,
-				CEA02D702B4E950D005206F1 /* StackFrameView.swift */,
-				CEA02D722B4E9F0C005206F1 /* HStackVStackView.swift */,
+				CEAE4A3A2B4FE18F004DDC70 /* ObservableStateView */,
+				CEAE4A392B4FE189004DDC70 /* StackFrameView */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -177,6 +185,26 @@
 				CE4D1C352B300ED30004299C /* Home */,
 			);
 			path = Feature;
+			sourceTree = "<group>";
+		};
+		CEAE4A392B4FE189004DDC70 /* StackFrameView */ = {
+			isa = PBXGroup;
+			children = (
+				CEA02D702B4E950D005206F1 /* StackFrameView.swift */,
+				CEA02D722B4E9F0C005206F1 /* HStackVStackView.swift */,
+			);
+			path = StackFrameView;
+			sourceTree = "<group>";
+		};
+		CEAE4A3A2B4FE18F004DDC70 /* ObservableStateView */ = {
+			isa = PBXGroup;
+			children = (
+				CEAE4A372B4FDD9F004DDC70 /* ObsStateEnvironmentView.swift */,
+				CEAE4A3B2B4FE1F6004DDC70 /* DemoDataVM.swift */,
+				CEAE4A3D2B4FE27B004DDC70 /* DemoView.swift */,
+				CEAE4A3F2B4FE3B8004DDC70 /* SpeedControlView.swift */,
+			);
+			path = ObservableStateView;
 			sourceTree = "<group>";
 		};
 		CEF5B4902B22F50D002767F1 /* View */ = {
@@ -328,10 +356,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEF5B4932B22F53D002767F1 /* Array+Extension.swift in Sources */,
+				CEAE4A3C2B4FE1F6004DDC70 /* DemoDataVM.swift in Sources */,
 				CEA02D712B4E950D005206F1 /* StackFrameView.swift in Sources */,
+				CEAE4A3E2B4FE27B004DDC70 /* DemoView.swift in Sources */,
 				CEA02D732B4E9F0C005206F1 /* HStackVStackView.swift in Sources */,
 				CE7456ED2B2BE4AC005E2FB9 /* Network.swift in Sources */,
 				CE010F812B216569001A324E /* CITestApp.swift in Sources */,
+				CEAE4A402B4FE3B8004DDC70 /* SpeedControlView.swift in Sources */,
+				CEAE4A382B4FDD9F004DDC70 /* ObsStateEnvironmentView.swift in Sources */,
 				CE4D1C372B300F5E0004299C /* MainView.swift in Sources */,
 				CE7456F02B2BE4EA005E2FB9 /* TopView.swift in Sources */,
 			);
