@@ -5,7 +5,7 @@ on:
     branches: [ "main" ]
 
 jobs:
-  build:
+  shellcheck:
     runs-on: macos-13
 
     steps:
@@ -15,6 +15,7 @@ jobs:
       - name: Check modified shell scripts
         id: check_sh
         run: |
+          git fetch origin ${{ github.head_ref }}
           FILES=$(git diff --name-only origin/${{ github.base_ref }}..origin/${{ github.head_ref }})
           echo "Modified files: $FILES"
           SH_MODIFIED=""
