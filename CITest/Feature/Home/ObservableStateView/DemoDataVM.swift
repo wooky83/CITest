@@ -17,4 +17,3 @@ class DemoData: ObservableObject {
 class SpeedSetting: ObservableObject {
     @Published var speed = 0.0
 }
-
