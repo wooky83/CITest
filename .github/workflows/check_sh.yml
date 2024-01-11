@@ -1,0 +1,32 @@
+name: Swift
+
+on:
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: macos-13
+
+    steps:
+      - name: Check modified shell scripts
+        id: check_sh
+        run: |
+          git fetch origin ${{ github.base_ref }}
+          FILES=$(git diff --name-only origin/${{ github.base_ref }})
+          echo "Modified files: $FILES"
+          SH_MODIFIED=""
+          for FILE in $FILES; do
+            if [[ "$FILE" == *.sh ]]; then
+              echo "Shell script modified: $FILE"
+              SH_MODIFIED="$SH_MODIFIED $FILE"
+            fi
+          done
+          echo "::set-output name=sh_modified::$SH_MODIFIED"
+
+      - name: Run if shell script modified
+        if: steps.check_sh.outputs.sh_modified != ''
+        run: |
+          echo "Modified shell scripts: ${{ steps.check_sh.outputs.sh_modified }}"
+          brew install shellcheck
+          shellcheck ${{ steps.check_sh.outputs.sh_modified }}
