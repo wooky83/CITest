@@ -15,6 +15,7 @@
 		CE010F9E2B21656A001A324E /* CITestUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE010F9D2B21656A001A324E /* CITestUITestsLaunchTests.swift */; };
 		CE0F77FF2B218D1A00DB3F2F /* CITest.xctestplan in Resources */ = {isa = PBXBuildFile; fileRef = CE0F77FE2B218D1A00DB3F2F /* CITest.xctestplan */; };
 		CE0F78012B21B12E00DB3F2F /* CIUtilTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0F78002B21B12E00DB3F2F /* CIUtilTests.swift */; };
+		CE12F52E2B55148700F26832 /* STructuredConcurrencyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE12F52D2B55148700F26832 /* STructuredConcurrencyView.swift */; };
 		CE4D1C372B300F5E0004299C /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4D1C362B300F5E0004299C /* MainView.swift */; };
 		CE7456ED2B2BE4AC005E2FB9 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7456EC2B2BE4AC005E2FB9 /* Network.swift */; };
 		CE7456F02B2BE4EA005E2FB9 /* TopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7456EF2B2BE4EA005E2FB9 /* TopView.swift */; };
@@ -56,6 +57,7 @@
 		CE010F9D2B21656A001A324E /* CITestUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CITestUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		CE0F77FE2B218D1A00DB3F2F /* CITest.xctestplan */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CITest.xctestplan; sourceTree = "<group>"; };
 		CE0F78002B21B12E00DB3F2F /* CIUtilTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIUtilTests.swift; sourceTree = "<group>"; };
+		CE12F52D2B55148700F26832 /* STructuredConcurrencyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STructuredConcurrencyView.swift; sourceTree = "<group>"; };
 		CE4D1C362B300F5E0004299C /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		CE7456EC2B2BE4AC005E2FB9 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		CE7456EF2B2BE4EA005E2FB9 /* TopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopView.swift; sourceTree = "<group>"; };
@@ -153,10 +155,19 @@
 			path = CITestUITests;
 			sourceTree = "<group>";
 		};
+		CE12F52C2B55146F00F26832 /* StructuredConcurrency */ = {
+			isa = PBXGroup;
+			children = (
+				CE12F52D2B55148700F26832 /* STructuredConcurrencyView.swift */,
+			);
+			path = StructuredConcurrency;
+			sourceTree = "<group>";
+		};
 		CE4D1C352B300ED30004299C /* Home */ = {
 			isa = PBXGroup;
 			children = (
 				CE7456EF2B2BE4EA005E2FB9 /* TopView.swift */,
+				CE12F52C2B55146F00F26832 /* StructuredConcurrency */,
 				CEAE4A3A2B4FE18F004DDC70 /* ObservableStateView */,
 				CEAE4A392B4FE189004DDC70 /* StackFrameView */,
 			);
@@ -356,6 +367,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEF5B4932B22F53D002767F1 /* Array+Extension.swift in Sources */,
+				CE12F52E2B55148700F26832 /* STructuredConcurrencyView.swift in Sources */,
 				CEAE4A3C2B4FE1F6004DDC70 /* DemoDataVM.swift in Sources */,
 				CEA02D712B4E950D005206F1 /* StackFrameView.swift in Sources */,
 				CEAE4A3E2B4FE27B004DDC70 /* DemoView.swift in Sources */,
