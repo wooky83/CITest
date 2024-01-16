@@ -17,6 +17,11 @@ struct HomeTopView: View {
                 }, label: {
                     Text(ViewType.obsStateEnvironment.rawValue)
                 })
+                Button(action: {
+                    path.append(.structuredConcurrency)
+                }, label: {
+                    Text(ViewType.structuredConcurrency.rawValue)
+                })
             }
             .navigationTitle("SwiftUI")
             .navigationDestination(for: ViewType.self) { next in
@@ -25,6 +30,8 @@ struct HomeTopView: View {
                     StackFrameView()
                 case .obsStateEnvironment:
                     ObsStateEnvironmentView()
+                case .structuredConcurrency:
+                    STructuredConcurrencyView()
                 }
             }
         }
@@ -34,6 +41,7 @@ struct HomeTopView: View {
 enum ViewType: String, Hashable {
     case stackFrame
     case obsStateEnvironment
+    case structuredConcurrency
 }
 
 #Preview {
