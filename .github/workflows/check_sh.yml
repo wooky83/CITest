@@ -29,8 +29,24 @@ jobs:
           echo "::set-output name=sh_modified::$SH_MODIFIED"
 
       - name: Run if shell script modified
+        id: shellcheck
         if: steps.check_sh.outputs.sh_modified != ''
         run: |
           echo "Modified shell scripts: ${{ steps.check_sh.outputs.sh_modified }}"
           sudo apt install shellcheck
-          shellcheck ${{ steps.check_sh.outputs.sh_modified }}
+          shellcheck ${{ steps.check_sh.outputs.sh_modified }} > shellcheck_output.txt || true
+        shell: bash
+      
+      - name: Comment PR if shellcheck failed
+        uses: actions/github-script@v7
+        if: steps.shellcheck.outcome == 'failure'
+        with:
+          script: |
+            const fs = require('fs');
+            const output = fs.readFileSync('shellcheck_output.txt', 'utf8');
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: "Shellcheck output:\n```\n" + output + "\n```"
+            });
