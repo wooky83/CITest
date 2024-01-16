@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct STructuredConcurrencyView: View {
+struct StructuredConcurrencyView: View {
     enum DurationError: Error {
         case tooLong
         case tooShort
@@ -29,10 +29,10 @@ struct STructuredConcurrencyView: View {
             for await (task, date) in group {
                 timeStamp[task] = date
             }
+        }
 
-            for (task, date) in timeStamp {
-                print("Task \(task), Date = \(date)")
-            }
+        for (task, date) in timeStamp {
+            print("Task \(task), Date = \(date)")
         }
     }
 
@@ -68,5 +68,5 @@ struct STructuredConcurrencyView: View {
 }
 
 #Preview {
-    STructuredConcurrencyView()
+    StructuredConcurrencyView()
 }
