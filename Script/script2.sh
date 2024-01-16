@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 
-HI= "Hello World"
+HI="Hello World"
 
 echo "${HI}"

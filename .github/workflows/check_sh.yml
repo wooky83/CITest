@@ -48,7 +48,7 @@ jobs:
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: "Shellcheck output:\n```\n" + output + "\n```"
+              body: "Shellcheck fail output:\n```\n" + output + "\n```"
             });
             if (output) {
               core.setFailed("Shellcheck found issues");
