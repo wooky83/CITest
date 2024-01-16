@@ -34,7 +34,7 @@ jobs:
         run: |
           echo "Modified shell scripts: ${{ steps.check_sh.outputs.sh_modified }}"
           sudo apt install shellcheck
-          shellcheck ${{ steps.check_sh.outputs.sh_modified }} > shellcheck_output.txt || true
+          shellcheck ${{ steps.check_sh.outputs.sh_modified }} > shellcheck_output.txt"
         shell: bash
       
       - name: Comment PR if shellcheck failed
@@ -44,9 +44,11 @@ jobs:
           script: |
             const fs = require('fs');
             const output = fs.readFileSync('shellcheck_output.txt', 'utf8');
-            github.rest.issues.createComment({
-              issue_number: context.issue.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              body: "Shellcheck output:\n```\n" + output + "\n```"
-            });
+            if (output) {
+              github.rest.issues.createComment({
+                issue_number: context.issue.number,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                body: "Shellcheck output:\n```\n" + output + "\n```"
+              });
+            }
