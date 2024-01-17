@@ -3,6 +3,7 @@ import SwiftUI
 struct HomeTopView: View {
 
     @State var path: [ViewType] = []
+    @State var title = "SwiftUI"
 
     var body: some View {
         NavigationStack(path: $path) {
@@ -29,7 +30,7 @@ struct HomeTopView: View {
                     Text(ViewType.testActor.rawValue)
                 })
             }
-            .navigationTitle("SwiftUI")
+            .navigationTitle(title)
             .navigationDestination(for: ViewType.self) { next in
                 switch next {
                 case .stackFrame:
@@ -43,6 +44,21 @@ struct HomeTopView: View {
                 }
             }
         }
+        .onAppear(perform: {
+            print("onAppear triggered")
+        })
+        .onDisappear(perform: {
+            print("onDisappeared triggered")
+        })
+        .task(priority: .background) {
+            print("task Start")
+            title = await changeTitle()
+        }
+    }
+
+    func changeTitle() async -> String {
+        sleep(5)
+        return "Async task complete"
     }
 }
 
