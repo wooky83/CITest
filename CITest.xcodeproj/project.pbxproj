@@ -21,6 +21,7 @@
 		CE7456F02B2BE4EA005E2FB9 /* TopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7456EF2B2BE4EA005E2FB9 /* TopView.swift */; };
 		CEA02D712B4E950D005206F1 /* StackFrameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA02D702B4E950D005206F1 /* StackFrameView.swift */; };
 		CEA02D732B4E9F0C005206F1 /* HStackVStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA02D722B4E9F0C005206F1 /* HStackVStackView.swift */; };
+		CEA4CA612B57CB2400C30AEE /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA4CA602B57CB2400C30AEE /* SettingView.swift */; };
 		CEAE4A382B4FDD9F004DDC70 /* ObsStateEnvironmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAE4A372B4FDD9F004DDC70 /* ObsStateEnvironmentView.swift */; };
 		CEAE4A3C2B4FE1F6004DDC70 /* DemoDataVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAE4A3B2B4FE1F6004DDC70 /* DemoDataVM.swift */; };
 		CEAE4A3E2B4FE27B004DDC70 /* DemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAE4A3D2B4FE27B004DDC70 /* DemoView.swift */; };
@@ -64,6 +65,7 @@
 		CE7456EF2B2BE4EA005E2FB9 /* TopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopView.swift; sourceTree = "<group>"; };
 		CEA02D702B4E950D005206F1 /* StackFrameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackFrameView.swift; sourceTree = "<group>"; };
 		CEA02D722B4E9F0C005206F1 /* HStackVStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HStackVStackView.swift; sourceTree = "<group>"; };
+		CEA4CA602B57CB2400C30AEE /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		CEAE4A372B4FDD9F004DDC70 /* ObsStateEnvironmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObsStateEnvironmentView.swift; sourceTree = "<group>"; };
 		CEAE4A3B2B4FE1F6004DDC70 /* DemoDataVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoDataVM.swift; sourceTree = "<group>"; };
 		CEAE4A3D2B4FE27B004DDC70 /* DemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoView.swift; sourceTree = "<group>"; };
@@ -197,8 +199,17 @@
 			isa = PBXGroup;
 			children = (
 				CE4D1C352B300ED30004299C /* Home */,
+				CEA4CA5F2B57CB0E00C30AEE /* Setting */,
 			);
 			path = Feature;
+			sourceTree = "<group>";
+		};
+		CEA4CA5F2B57CB0E00C30AEE /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				CEA4CA602B57CB2400C30AEE /* SettingView.swift */,
+			);
+			path = Setting;
 			sourceTree = "<group>";
 		};
 		CEAE4A392B4FE189004DDC70 /* StackFrameView */ = {
@@ -380,6 +391,7 @@
 				CEF5B4932B22F53D002767F1 /* Array+Extension.swift in Sources */,
 				CE12F52E2B55148700F26832 /* StructuredConcurrencyView.swift in Sources */,
 				CEAE4A3C2B4FE1F6004DDC70 /* DemoDataVM.swift in Sources */,
+				CEA4CA612B57CB2400C30AEE /* SettingView.swift in Sources */,
 				CEA02D712B4E950D005206F1 /* StackFrameView.swift in Sources */,
 				CEAE4A3E2B4FE27B004DDC70 /* DemoView.swift in Sources */,
 				CEA02D732B4E9F0C005206F1 /* HStackVStackView.swift in Sources */,
