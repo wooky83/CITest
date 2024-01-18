@@ -29,6 +29,11 @@ struct HomeTopView: View {
                 }, label: {
                     Text(ViewType.testActor.rawValue)
                 })
+                Button(action: {
+                    path.append(.obsTutorial)
+                }, label: {
+                    Text(ViewType.obsTutorial.rawValue)
+                })
             }
             .navigationTitle(title)
             .navigationDestination(for: ViewType.self) { next in
@@ -41,6 +46,8 @@ struct HomeTopView: View {
                     StructuredConcurrencyView()
                 case .testActor:
                     TestActorView()
+                case .obsTutorial:
+                    ObservableTutorialView()
                 }
             }
         }
@@ -67,6 +74,7 @@ enum ViewType: String, Hashable {
     case obsStateEnvironment
     case structuredConcurrency
     case testActor
+    case obsTutorial
 }
 
 #Preview {
