@@ -29,7 +29,7 @@ jobs:
         run: |
           ISSUE_KEY=$(echo '${{ github.event.head_commit.message }}' | grep -o '\[\s*\S*\s*\]')
           ISSUE_KEY=$(echo $ISSUE_KEY | sed 's/ //g')  # Remove spaces
-          ISSUE_KEY=${ISSUE_KEY:1:-1}  # Remove the brackets
+          ISSUE_KEY=$(echo $ISSUE_KEY | sed 's/\[//g' | sed 's/\]//g')  # Remove brackets
           echo "::set-output name=issue_key::$ISSUE_KEY"
         
       - name: Transition issue
