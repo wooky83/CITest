@@ -4,10 +4,14 @@ struct HomeTopView: View {
 
     @State var path: [ViewType] = []
     @State var title = "SwiftUI"
+    @AppStorage("myText") var editorText = "SampleText"
 
     var body: some View {
         NavigationStack(path: $path) {
             VStack {
+                TextEditor(text: $editorText)
+                    .frame(width: 300, height: 100)
+                    .font(.largeTitle)
                 Button(action: {
                     path.append(.stackFrame)
                 }, label: {
