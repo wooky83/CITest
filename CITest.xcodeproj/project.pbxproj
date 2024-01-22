@@ -29,6 +29,7 @@
 		CEAE4A3C2B4FE1F6004DDC70 /* DemoDataVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAE4A3B2B4FE1F6004DDC70 /* DemoDataVM.swift */; };
 		CEAE4A3E2B4FE27B004DDC70 /* DemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAE4A3D2B4FE27B004DDC70 /* DemoView.swift */; };
 		CEAE4A402B4FE3B8004DDC70 /* SpeedControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAE4A3F2B4FE3B8004DDC70 /* SpeedControlView.swift */; };
+		CEAFD6CD2B5E511500493A92 /* StackAlignView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAFD6CC2B5E511500493A92 /* StackAlignView.swift */; };
 		CEF5B4932B22F53D002767F1 /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF5B4922B22F53D002767F1 /* Array+Extension.swift */; };
 		CEFB0BE12B5681CF009484AB /* TestActorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFB0BE02B5681CF009484AB /* TestActorView.swift */; };
 /* End PBXBuildFile section */
@@ -76,6 +77,7 @@
 		CEAE4A3B2B4FE1F6004DDC70 /* DemoDataVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoDataVM.swift; sourceTree = "<group>"; };
 		CEAE4A3D2B4FE27B004DDC70 /* DemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoView.swift; sourceTree = "<group>"; };
 		CEAE4A3F2B4FE3B8004DDC70 /* SpeedControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedControlView.swift; sourceTree = "<group>"; };
+		CEAFD6CC2B5E511500493A92 /* StackAlignView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackAlignView.swift; sourceTree = "<group>"; };
 		CEF5B4922B22F53D002767F1 /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
 		CEFB0BE02B5681CF009484AB /* TestActorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestActorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -187,6 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				CE7456EF2B2BE4EA005E2FB9 /* TopView.swift */,
+				CEAFD6CB2B5E510300493A92 /* StackAlignView */,
 				CE02D9402B591E0600BE08FC /* Tutorial */,
 				CEFB0BDF2B5681B8009484AB /* TestActorView */,
 				CE12F52C2B55146F00F26832 /* StructuredConcurrency */,
@@ -247,6 +250,14 @@
 				CEAE4A3F2B4FE3B8004DDC70 /* SpeedControlView.swift */,
 			);
 			path = ObservableStateView;
+			sourceTree = "<group>";
+		};
+		CEAFD6CB2B5E510300493A92 /* StackAlignView */ = {
+			isa = PBXGroup;
+			children = (
+				CEAFD6CC2B5E511500493A92 /* StackAlignView.swift */,
+			);
+			path = StackAlignView;
 			sourceTree = "<group>";
 		};
 		CEF5B4902B22F50D002767F1 /* View */ = {
@@ -420,6 +431,7 @@
 				CEAE4A402B4FE3B8004DDC70 /* SpeedControlView.swift in Sources */,
 				CEFB0BE12B5681CF009484AB /* TestActorView.swift in Sources */,
 				CEAE4A382B4FDD9F004DDC70 /* ObsStateEnvironmentView.swift in Sources */,
+				CEAFD6CD2B5E511500493A92 /* StackAlignView.swift in Sources */,
 				CE4D1C372B300F5E0004299C /* MainView.swift in Sources */,
 				CE7456F02B2BE4EA005E2FB9 /* TopView.swift in Sources */,
 			);
