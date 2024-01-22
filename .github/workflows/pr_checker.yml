@@ -28,8 +28,13 @@ jobs:
         uses: atlassian/gajira-transition@v3
         with:
           issue: CID-14
-          transition: "검토 중"
+          transition: 31
         
+          # { id: 11, name: 할 일 } transitions issue to '해야 할 일' status.
+          # { id: 21, name: 진행 중 } transitions issue to '진행 중' status.
+          # { id: 31, name: 검토중 } transitions issue to '검토 중' status.
+          # { id: 41, name: 완료 } transitions issue to '완료됨' status.
+
       - name: Cache RubyGems
         uses: actions/cache@v3
         with:
