@@ -16,17 +16,23 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Check modified shell scripts
-        run: |
-          git fetch origin ${{ github.base_ref }}
-          FILES=$(git diff --name-only origin/${{ github.base_ref }})
-          echo "Modified files: $FILES"
-          for FILE in $FILES; do
-            if [[ "$FILE" == *.sh ]]; then
-              echo "Shell script modified: $FILE"
-              # 여기에 .sh 파일이 수정되었을 때 수행할 동작을 추가하세요.
-            fi
-          done
+      - name: Login
+        uses: atlassian/gajira-login@master
+        env:
+          JIRA_BASE_URL: ${{ secrets.JIRA_BASE_URL }}
+          JIRA_USER_EMAIL: ${{ secrets.JIRA_USER_EMAIL }}
+          JIRA_API_TOKEN: ${{ secrets.JIRA_API_TOKEN }}
+
+      - name: Find Issue Key
+        uses: ./
+        with:
+          from: commits
+
+      - name: Transition issue
+        uses: atlassian/gajira-transition@master
+        with:
+          issue: ${{ steps.create.outputs.issue }}
+          transition: "In Progress"
         
       - name: Cache RubyGems
         uses: actions/cache@v3
