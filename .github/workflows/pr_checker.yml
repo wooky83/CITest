@@ -27,8 +27,8 @@ jobs:
         id: transition
         uses: atlassian/gajira-transition@v3
         with:
-          issue: GID-14
-          transition: "Pull Request"
+          issue: CID-14
+          transition: "검토 중"
         
       - name: Cache RubyGems
         uses: actions/cache@v3
