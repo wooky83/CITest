@@ -28,7 +28,7 @@ jobs:
         uses: atlassian/gajira-transition@v3
         with:
           issue: CID-14
-          transition: 31
+          transitionId: 31
         
           # { id: 11, name: 할 일 } transitions issue to '해야 할 일' status.
           # { id: 21, name: 진행 중 } transitions issue to '진행 중' status.
