@@ -27,7 +27,6 @@ jobs:
       - name: Extract Jira issue from commit message
         id: jira
         run: |
-          echo "Commit message: ${{ github.event.head_commit.message }}"
           ISSUE_KEY=$(echo '${{ github.event.head_commit.message }}' | grep -o '\[\s*\S*\s*\]')
           ISSUE_KEY=$(echo $ISSUE_KEY | sed 's/ //g')  # Remove spaces
           ISSUE_KEY=${ISSUE_KEY:1:-1}  # Remove the brackets
