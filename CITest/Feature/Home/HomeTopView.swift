@@ -6,38 +6,22 @@ struct HomeTopView: View {
     @State var title = "SwiftUI"
     @AppStorage("myText") var editorText = "SampleText"
 
+    private var listData = ViewType.allCases
+
     var body: some View {
         NavigationStack(path: $path) {
             VStack {
                 TextEditor(text: $editorText)
                     .frame(width: 300, height: 100)
                     .font(.largeTitle)
-                Button(action: {
-                    path.append(.stackFrame)
-                }, label: {
-                    Text(ViewType.stackFrame.rawValue)
-                })
-                Button(action: {
-                    path.append(.obsStateEnvironment)
-                }, label: {
-                    Text(ViewType.obsStateEnvironment.rawValue)
-                })
-                Button(action: {
-                    path.append(.structuredConcurrency)
-                }, label: {
-                    Text(ViewType.structuredConcurrency.rawValue)
-                })
 
-                Button(action: {
-                    path.append(.testActor)
-                }, label: {
-                    Text(ViewType.testActor.rawValue)
-                })
-                Button(action: {
-                    path.append(.obsTutorial)
-                }, label: {
-                    Text(ViewType.obsTutorial.rawValue)
-                })
+                List(listData) { item in
+                    Button(action: {
+                        path.append(item)
+                    }, label: {
+                        Text(item.rawValue)
+                    })
+                }
             }
             .navigationTitle(title)
             .navigationDestination(for: ViewType.self) { next in
@@ -52,6 +36,8 @@ struct HomeTopView: View {
                     TestActorView()
                 case .obsTutorial:
                     ObservableTutorialView()
+                case .list:
+                    SwiftUIListView()
                 }
             }
         }
@@ -73,12 +59,15 @@ struct HomeTopView: View {
     }
 }
 
-enum ViewType: String, Hashable {
+enum ViewType: String, Hashable, CaseIterable, Identifiable {
+    var id: Self { self }
+
     case stackFrame
     case obsStateEnvironment
     case structuredConcurrency
     case testActor
     case obsTutorial
+    case list
 }
 
 #Preview {
