@@ -14,7 +14,7 @@ public struct MainView: View {
                 }
             HomeTopView()
                 .tabItem {
-                    Label("Concurrency", systemImage: "arrow.clockwise.icloud.fill")
+                    Label("Demo", systemImage: "arrow.clockwise.icloud.fill")
                 }
             HomeTopView()
                 .tabItem {
