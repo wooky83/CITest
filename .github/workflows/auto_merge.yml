@@ -1,0 +1,44 @@
+# This workflow will build a Swift project
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-swift
+
+name: PR Build & Test
+
+on:
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  auto-merge:
+
+    runs-on: ubuntu-22.04
+
+    steps:
+      - name: pwd
+        run: |
+          echo "whynot"
+          echo $(pwd)
+          echo ${{ github.workspace }}
+
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: pwd
+        run: |
+          echo "whynot1"
+          echo $(pwd)
+          echo ${{ github.workspace }}
+        
+      - name: Checkout code11
+        uses: actions/checkout@v4
+        with:
+          repository: wooky83/ci-script
+          path: ci-script
+
+      - name: pwd
+        run: |
+          echo "whynot2"
+          echo $(pwd)
+          echo ${{ github.workspace }}
+          echo $(ls -l -a)
+      
+      
