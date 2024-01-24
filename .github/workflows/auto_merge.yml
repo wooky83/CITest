@@ -13,34 +13,19 @@ jobs:
     runs-on: ubuntu-22.04
 
     steps:
-      - name: pwd
-        run: |
-          echo "whynot"
-          echo $(pwd)
-          echo ${{ github.workspace }}
-          echo $(ls -l -a)
-
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: pwd
-        run: |
-          echo "whynot1"
-          echo $(pwd)
-          echo ${{ github.workspace }}
-        
-      - name: Checkout code11
+      - name: Checkout ci-script code
         uses: actions/checkout@v4
         with:
           repository: wooky83/ci-script
           token: ${{ secrets.GH_PAT }}
           path: ci-script
-
-      - name: pwd
-        run: |
-          echo "whynot2"
+      
+      - name: Use bash shell
+        shell: bash
+        run : |
+          pushd ci-script
+          echo "whynot"
           echo $(pwd)
           echo ${{ github.workspace }}
-          echo $(ls -l -a)
-      
+          popd
       
