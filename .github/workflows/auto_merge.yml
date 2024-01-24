@@ -27,8 +27,6 @@ jobs:
           export GITHUB_MERGER_TOKEN=${{ secrets.GH_PAT }}
           export GITHUB_APPROVE_TOKEN=${{ secrets.GH_APPROVE_TOKEN }}
           export SLACK_TOKEN="gg"
-          git config --global user.name "wooky83"
-          git config --global user.email "baw0803@nate.com"
           ./auto-merge/auto_merge_runner.sh "wooky83" "CITest" "main" "release/v0.0.1" "wookynim" "none"
           popd
   
